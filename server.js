@@ -9,10 +9,14 @@ dotenv.config({ path: './config/config.env' });
 
 const app = express();
 
+// middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 // Dev loggin middle
 if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('dev'))
-}
+    app.use(morgan('dev'));
+};
 
 
 const PORT = process.env.PORT || 5000;
