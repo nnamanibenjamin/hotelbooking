@@ -1,4 +1,4 @@
-import React from 'react'
+ //The List of all available hotels probably in our database
 
 const List = () => {
   return (
