@@ -10,11 +10,12 @@ import './header.css'
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
+
 import {useState} from 'react'
 import {format} from 'date-fns'
 
 //This will be our header component, that should be displaying in all pages
-const Header = () => {
+const Header = ({type}) => {
 
   const [openDate, setOpenDate] = useState(false)
 
@@ -33,6 +34,14 @@ const Header = () => {
     children: 0,
     room: 1
   })
+
+  const handleOption = (name, operation) => {
+    setOptions(prev=> { return {
+      ...prev, 
+      [name]: operation === 'd' ? options[name] -- : options[name] ++
+  }})
+  }
+
   return (
     <div className='header'>
         <div className='headerContainer'>
@@ -62,74 +71,99 @@ const Header = () => {
           <span>Airport taxis</span>
          </div>
       </div>
-      <h1 className='headerTitle'>An amazing discount? Its a Genius!</h1>
+     
+        {type !== 'list' &&
+           <>
+                  <h1 className='headerTitle'>An amazing discount? Its a Genius!</h1>
 
-      <p className='headerDesc'>Get an amazing 20% discount for loungue above 3 days!!!</p>
+                  <p className='headerDesc'>Get an amazing 20% discount for loungue above 3 days!!!</p>
 
-      <button className='headerBtn'>Sign In / Register</button>
+                  <button className='headerBtn'>Sign In / Register</button>
 
-      <div className='headerSearch'>
-          <div className='headerSearchItem'>
-          <BedOutlined className='headerIcon'/>
-          <input 
-          type='text' 
-          placeholder='Search Location...' 
-          className='headerSearchInput' 
-          />
-          </div>
+                  <div className='headerSearch'>
+                     <div className='headerSearchItem'>
+                      <BedOutlined className='headerIcon'/>
+                     <input 
+                        type='text' 
+                        placeholder='Search Location...' 
+                        className='headerSearchInput' 
+                       />
+                   </div>
 
-          <div className='headerSearchItem'>
-          <CalendarMonthOutlined className='headerIcon'/>
-          <span 
-          className='headerSearchText'
-          onClick={()=>setOpenDate(!openDate)}
-          >
-            {`${format(date[0].startDate, 'MM/dd/yyyy')} to 
-            ${format(date[0].endDate, 'MM/dd/yyyy')}`}
-            </span>
-            {
-              openDate &&  <DateRange
-              editableDataInputs={true}
-              onChange={item => setDate([item.selection])}
-              moveRangeOnFirstSelection={false}
-              ranges={date}
-              className='date '
-            />
-            }
+               <div className='headerSearchItem'>
+                <CalendarMonthOutlined className='headerIcon'/>
+                <span 
+                className='headerSearchText'
+                onClick={()=>setOpenDate(!openDate)}
+                >
+                  {`${format(date[0].startDate, 'MM/dd/yyyy')} to 
+                  ${format(date[0].endDate, 'MM/dd/yyyy')}`}
+                  </span>
+                 {
+                    openDate &&  <DateRange
+                    editableDataInputs={true}
+                    onChange={item => setDate([item.selection])}
+                    moveRangeOnFirstSelection={false}
+                    ranges={date}
+                    className='date'
+                  />
+                 }
 
           </div>
 
           <div className='headerSearchItem'>
           <Person2Outlined className='headerIcon'/>
-          <span className='headerSearchText'>{`${options.adult} adult . ${options.children} children . ${options.room} room`}</span>
-          <div className='options'>
+          <span onClick={()=>setOpenOptions(!openOptions)} className='headerSearchText'>{`${options.adult} adult . ${options.children} children . ${options.room} room`}</span>
+          {openOptions && <div className='options'>
               <div className='optionItem'>
                 <span className='optionText'>Adult</span>
-                <button className='optionCountBtn'>+</button>
-                <span className='optionCountNum'>1</span>
-                <button className='optionCountBtn'>-</button>
+                <div className='optionCounter'>
+                  <button 
+                  disabled={options.adult <=1}
+                  className='optionCountBtn' 
+                  onClick={()=>handleOption('adult', 'd')}
+                  >
+                    -
+                  </button>
+                  <span className='optionCountNum'>{options.adult}</span>
+                  <button 
+                  className='optionCountBtn' 
+                  onClick={()=>handleOption('adult', 'i')}
+                  >
+                    +
+                  </button>
+                </div>
               </div>
 
               <div className='optionItem'>
                 <span className='optionText'>Children</span>
-                <button className='optionCountBtn'>+</button>
-                <span className='optionCountNum'>0</span>
-                <button className='optionCountBtn'>-</button>
+                <div className='optionCounter'>
+                  <button disabled={options.children <=0} className='optionCountBtn' onClick={()=>handleOption('children', 'd')}>-</button>
+                  <span className='optionCountNum'>{options.children}</span>
+                  <button className='optionCountBtn' onClick={()=>handleOption('children', 'i')}>+</button>
+                </div>
               </div>
 
               <div className='optionItem'>
                 <span className='optionText'>Room</span>
-                <button className='optionCountBtn'>+</button>
-                <span className='optionCountNum'>1</span>
-                <button className='optionCountBtn'>-</button>
+                <div className='optionCounter'>
+                    <button disabled={options.room <=1} className='optionCountBtn' onClick={()=>handleOption('room', 'd')}>-</button>
+                    <span className='optionCountNum'>{options.room}</span>
+                    <button className='optionCountBtn' onClick={()=>handleOption('room', 'i')}>+</button>
+                </div>    
+          
               </div>
+          </div>}
           </div>
-          </div>
+          
 
           <div className='headerSearchItem'>
           <button className='headerBtn'>SEARCH</button>
           </div>
       </div>
+           </>
+        }
+        
       </div>
     </div>
   )

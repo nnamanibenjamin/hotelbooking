@@ -1,9 +1,15 @@
- //The List of all available hotels probably in our database
 
+import Navbar from '../../components/navbar/Navbar';
+import Header from '../../components/header/Header';
+
+
+
+ //The page will show the List of all available hotels probably in our database
 const List = () => {
   return (
     <div>
-      List
+     <Navbar/>
+     <Header type='list'/>
     </div>
   )
 }

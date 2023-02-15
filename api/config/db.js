@@ -1,12 +1,14 @@
-const mongoose = require('mongoose');
+// 'use strict';
+// const {set, connect, on} = require('mongoose');
+// const {log, error} = require('console')
 
-mongoose.set("strictQuery", false);
-const connectDB = async() => {
-   const conn = await mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-   });
 
-   console.log(`MongoDB Connected: ${conn.connection.host}`.green.underline.bold);
-} 
 
-module.exports = connectDB;
+// set("strictQuery", true);
+// module.exports.connectDB = async() => {
+//    const conn = await connect(process.env.MONGO_URI, {
+//     useNewUrlParser: true,
+//    });
+
+//   log(`MongoDB Connected: ${conn.connection.host}`.green.underline.bold);
+// } 

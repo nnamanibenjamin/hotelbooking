@@ -2,10 +2,11 @@
   "name": "hotelbooking",
   "version": "1.0.0",
   "description": "hotel management booking",
-  "main": "server.js",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "SET NODE_ENV=production & nodemon server.js",
-    "dev": "nodemon server"
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
