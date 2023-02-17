@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { createHotel, deleteHotel, getAllHotel, getHotel, updateHotel } from "../controllers/hotelController.js";
-import Hotel  from "../models/Hotel.js";
+
 
 const router = Router()
 

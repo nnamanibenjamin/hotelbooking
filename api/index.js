@@ -4,6 +4,7 @@ import express, {json, urlencoded} from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 const  {connect, set, on, connection} = mongoose;
+
 import console from 'console'
 const { log, error } = console
 
@@ -69,4 +70,4 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 4001;
 
-const server = app.listen(PORT, console.log(`Server active at port ${PORT}`))
+const server = app.listen(PORT, log(`Server active at port ${PORT}`))
