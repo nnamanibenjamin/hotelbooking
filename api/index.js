@@ -1,15 +1,17 @@
 'use strict';
 
-import express, {json, urlencoded} from 'express';
+//load env files
 import dotenv from 'dotenv';
+dotenv.config()
+
+import express, {json, urlencoded} from 'express';
+import cookieParser from 'cookie-parser'
 import mongoose from 'mongoose';
 const  {connect, set, on, connection} = mongoose;
 
 import console from 'console'
 const { log, error } = console
 
-//load env files
-dotenv.config({ path: './config/config.env' });
 
 import authRoute from './routes/auth.js'
 import usersRoute from './routes/users.js'
@@ -21,6 +23,7 @@ const app = express();
 
 // middleware
 
+app.use(cookieParser())
 app.use(urlencoded({ extended: false }));
 
 // Dev loggin middle
@@ -33,7 +36,7 @@ if (process.env.NODE_ENV === 'development') {
 
 set('strictQuery', true)
 
-const db_url = 'mongodb://127.0.0.1:27017/hotelbooking' || process.env.DB_URL
+const db_url =  process.env.DB_URL
 
 
 connect(db_url, {
@@ -68,6 +71,6 @@ app.use((err, req, res, next) => {
     })
 })
 
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT 
 
 const server = app.listen(PORT, log(`Server active at port ${PORT}`))

@@ -14,10 +14,13 @@ import 'react-date-range/dist/theme/default.css'
 import {useState} from 'react'
 import {format} from 'date-fns'
 
+import { useNavigate} from 'react-router-dom'
+
 //This will be our header component, that should be displaying in all pages
 const Header = ({type}) => {
 
-  const [openDate, setOpenDate] = useState(false)
+  const [openDate, setOpenDate] = useState(false);
+  const [destination, setDestination] = useState('')
 
   const [date, setDate] = useState([
     {
@@ -42,9 +45,15 @@ const Header = ({type}) => {
   }})
   }
 
+  const navigate = useNavigate()
+
+  const handleSearch = () => {
+    navigate('/hotels', {state: {destination, date, options}})
+  }
+
   return (
     <div className='header'>
-        <div className='headerContainer'>
+        <div className={type === 'list' ? 'headerContainer listMode' : 'headerContainer'}>
       <div className='headerList'>
         <div className='headerListItem active'>
           <BedOutlined/>
@@ -86,7 +95,8 @@ const Header = ({type}) => {
                      <input 
                         type='text' 
                         placeholder='Search Location...' 
-                        className='headerSearchInput' 
+                        className='headerSearchInput'
+                        onChange={e=>setDestination(e.target.value)}
                        />
                    </div>
 
@@ -158,7 +168,7 @@ const Header = ({type}) => {
           
 
           <div className='headerSearchItem'>
-          <button className='headerBtn'>SEARCH</button>
+          <button className='headerBtn' onClick={handleSearch}>SEARCH</button>
           </div>
       </div>
            </>

@@ -3,8 +3,6 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken'
 import { createError } from '../utils/error.js';
 
-const JWT = 'tompolo123'
-
 export const register = async (req, res, next) => {
     try {
         const salt = bcrypt.genSaltSync(10);
@@ -36,10 +34,10 @@ export const login = async (req, res, next) => {
         if (!isPasswordCorrect)
             return next(createError(400, 'Incorrect password'));
         
-        const token = jwt.sign({id:user._id, isAdmin: user.isAdmin}, JWT)
+        const token = jwt.sign({id:user._id, isAdmin: user.isAdmin}, process.env.JWT)
         const {isAdmin, password, ...otherDetails} = user._doc
     
-        res.status(200).json({...otherDetails})
+        res.cookie('access_token', token, {httpOnly: true} ).status(200).json({...otherDetails})
    
     } catch (err) {
         next(err)

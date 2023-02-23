@@ -12,6 +12,10 @@
     margin: 20px 0px 100px 0px;
 }
 
+.headerContainer.listMode{
+    margin: 20px 0px 0px 0px;
+}
+
 .headerList{
     display: flex;
     gap: 35px;
@@ -55,7 +59,7 @@
     position: absolute;
     bottom: -20px;
     width: 100%;
-    max-width: 750px;
+    max-width: 1024px;
 }
 
 .headerIcon{
@@ -80,6 +84,7 @@
 .date{
     position: absolute;
     top: 40px;
+    z-index: 2;
 }
 
 .options{
@@ -90,6 +95,7 @@
     color: gray;
     border-radius: 5px;
     box-shadow: 0px 0px 0px 3px rgba(0, 0, 0 .4);
+    z-index: 2;
 }
 
 .optionItem{
