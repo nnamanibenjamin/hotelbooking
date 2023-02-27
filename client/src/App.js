@@ -1,7 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
-import Home from './pagees/home/Home'
-import Hotel from './pagees/hotel/Hotel';
-import List from './pagees/list/List';
+import Home from './pages/home/Home'
+import Hotel from './pages/hotel/Hotel';
+import List from './pages/list/List';
 
 const App = () => {
   return (
