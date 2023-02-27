@@ -13,13 +13,13 @@ const List = () => {
 
   const location = useLocation();
 
-  const [date, setDate] = useState(location.state.date)
-  const [destination, setDestination] = useState(location.state.destination)
+  // const [date, setDate] = useState(location.state.date)
+  // const [destination, setDestination] = useState(location.state.destination)
   
-  const [options, setOptions] = useState(location.state.options)
+  // const [options, setOptions] = useState(location.state.options)
 
   return (
-    <div>
+    <div> 
      <Navbar/>
      <Header type='list'/>
      <div className='listContainer'>
