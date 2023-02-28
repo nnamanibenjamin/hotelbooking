@@ -85,7 +85,7 @@ const Header = ({type}) => {
            <>
                   <h1 className='headerTitle'>An amazing discount? Its a Genius!</h1>
 
-                  <p className='headerDesc'>Get an amazing 20% discount for loungue above 3 days!!!</p>
+                  <p className='headerDesc'> Book a stay over for 3days and get 10% discount</p>
 
                   <button className='headerBtn'>Sign In / Register</button>
 
@@ -116,6 +116,7 @@ const Header = ({type}) => {
                     moveRangeOnFirstSelection={false}
                     ranges={date}
                     className='date'
+                    minDate={new Date()}
                   />
                  }
 
