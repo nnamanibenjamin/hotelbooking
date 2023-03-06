@@ -4,6 +4,7 @@
     justify-content: center;
     color: white;
     position: relative;
+    /* background-color: rgb(251, 173, 18);    <== checkout this background color*/  
 }
 
 .headerContainer{
