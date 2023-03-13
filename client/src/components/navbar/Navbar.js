@@ -1,6 +1,4 @@
 import './navbar.css'
-import {HotelRounded} from '@mui/icons-material'
-
 
 const Navbar = () => {
   return (
