@@ -7,29 +7,32 @@ dotenv.config()
 import express, {json, urlencoded} from 'express';
 import cookieParser from 'cookie-parser'
 import mongoose from 'mongoose';
+import morgan from 'morgan';
 const  {connect, set, on, connection} = mongoose;
 
 import console from 'console'
 const { log, error } = console
 
+//bind with express server
+const app = express();
 
+
+//import routes
 import authRoute from './routes/auth.js'
 import usersRoute from './routes/users.js'
 import hotelsRoute from './routes/hotels.js'
 import roomsRoute from './routes/rooms.js'
 
 
-const app = express();
 
-// middleware
+
+// middlewares
 
 app.use(cookieParser())
+app.use(morgan('common'));
+app.use(json());
 app.use(urlencoded({ extended: false }));
 
-// Dev loggin middle
-if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('dev'));
-};
 
 
 //connection to mongodB
@@ -51,7 +54,7 @@ connection.on('Disconnected', ()=> {
 })
 
 //routes use here
-app.use(json());
+
 
 app.use('/api/auth', authRoute);
 app.use('/api/users', usersRoute)
@@ -71,6 +74,8 @@ app.use((err, req, res, next) => {
     })
 })
 
+
+//connection to port
 const PORT = process.env.PORT 
 
 const server = app.listen(PORT, log(`Server active at port ${PORT}`))

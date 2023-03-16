@@ -3,14 +3,14 @@ import Hotel from "../models/Hotel.js";
 import { createError } from "../utils/error.js";
 
 export const createRoom = async (req, res, next ) => {
-    const hotelId = req.params.id;
+    const hotelId = req.params.hotelid;
     const newRoom = new Room(req.body);
 
     try {
         const savedRoom = await newRoom.save();
         try {
             await Hotel.findByIdAndUpdate(hotelId, {$push: {rooms: savedRoom._id}})
-        } catch (error) {
+        } catch (err) {
             next(err)
         }
         res.status(200).json(savedRoom)
@@ -37,11 +37,11 @@ export const deleteRoom = async (req, res, next ) => {
         await Room.findByIdAndDelete(req.params.id);
         try {
             await Hotel.findByIdAndUpdate(hotelId, {$pull: {rooms: req.params.id}})
-        } catch (error) {
+        } catch (err) {
             next(err)
         }
 
-        res.status(200).json('Room Deleted')
+        res.status(200).json('This room has been deleted')
     } catch (err) {
         next(err)
     }
