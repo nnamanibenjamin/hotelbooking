@@ -8,6 +8,7 @@
 }
 
 .featuredItem{
+    display: flex;
     position: relative;
     color: black;
     border-radius: 10px;

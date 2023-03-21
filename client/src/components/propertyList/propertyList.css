@@ -12,12 +12,13 @@
     overflow: hidden;
     cursor: pointer;
     flex: 1;
+    text-transform: capitalize;
 }
 
 .plistImg{
-    width: 100%;
+    width: 90%;
     object-fit: cover;
-    height: 150px;
+    height: 140px;
     flex: 1;
 }
 

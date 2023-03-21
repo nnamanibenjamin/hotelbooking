@@ -7,6 +7,7 @@ dotenv.config()
 import express, {json, urlencoded} from 'express';
 import cookieParser from 'cookie-parser'
 import mongoose from 'mongoose';
+import cors from 'cors'
 import morgan from 'morgan';
 const  {connect, set, on, connection} = mongoose;
 
@@ -33,6 +34,12 @@ app.use(morgan('common'));
 app.use(json());
 app.use(urlencoded({ extended: false }));
 
+
+app.use(cors({
+    'origin': '*',
+    'methods': ['POST', 'PUT', 'PATCH', 'POST', 'GET', 'DELETE'],
+    'allowedHeaders': ['Content-Type', 'Authorization']
+}))
 
 
 //connection to mongodB

@@ -1,8 +1,5 @@
 import User from "../models/User.js";
 
-//create hotel
-
-
 //update
 export const updateUser = async (req, res, next) => {
 

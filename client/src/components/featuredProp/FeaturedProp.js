@@ -1,8 +1,14 @@
 import './featuredProp.css'
 import img from '../../assets/hotel1.jpg'
+import useFetch from '../../hooks/useFetch';
 
 
 const FeaturedProp = () => {
+
+  const url = 'http://localhost:4001/api/hotels/countbytype';
+
+  const { data, error, loading } = useFetch(url)
+
   return (
     <div className='fp'>
     <div className='fpItem'>

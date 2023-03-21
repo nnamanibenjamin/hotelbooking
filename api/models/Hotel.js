@@ -21,7 +21,6 @@ const {Schema, model } = mongoose;
     },
     distance:{
         type: String,
-        required: true
     },
     photos:{
         type: [String],
