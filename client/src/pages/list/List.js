@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { format } from 'date-fns/esm';
 import { DateRange } from 'react-date-range';
 import SearchItem from '../../components/searchItem/SearchItem';
-
+import useFetch from '../../hooks/useFetch';
 
 
  //The page will show the List of all available hotels probably in our database
@@ -19,10 +19,13 @@ const List = () => {
 
   const [date, setDate] = useState(location.state.date)
   const [destination, setDestination] = useState(location.state.destination)
-  
   const [options, setOptions] = useState(location.state.options)
   const [openDate, setOpenDate] = useState(false)
-  console.log(location)
+
+  const url = 'http://localhost:4001/api/hotels?featured=true';
+
+  const {data, error, loading } = useFetch(url)
+
   return (
     <div> 
      <Navbar/>
