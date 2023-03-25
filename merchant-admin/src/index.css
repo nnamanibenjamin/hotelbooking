@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: 'Cross';
+  src: local('Cross'), url(./assets/fonts/Cross.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Jose';
+  src: local('Jose'), url(./assets/fonts/Jose.ttf) format('truetype');
+}

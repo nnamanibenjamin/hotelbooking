@@ -1,0 +1,90 @@
+.auth-btn-layer{
+    gap: 20px;
+    width: 100%;
+    justify-content: space-aroumd;
+    padding: 1px 20px;
+}
+.auth-btn-layer .btn-reg{
+    width: 50%;
+    margin: auto;
+    border: none;
+    padding: 15px; 
+    border-radius: 10px;
+    background-color: #336699;
+    border: 1px solid #336699;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    animation: fadeIn 1.2s ease both;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Jose';
+    margin-top: 30px;
+}
+.auth-btn-layer .btn-prev{
+    width: 50%;
+    margin: auto;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #336699;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    animation: fadeIn 1.2s ease both;
+    margin-bottom: 10px;
+    color: #336699;
+    font-size: 15px;
+    font-family: 'Jose';
+    margin-top: 30px;
+}
+.form-firstlayer{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+}
+.form-firstlayer .company-grid{
+    display: flex;
+    align-items: center;
+    width: 45%;
+    flex-direction: column;
+}
+.company-grid input{
+    padding: 12px 10px;
+    border: 1px solid #eee;
+    background-color: #fff;
+}
+.form-firstlayer .company-grid h2{
+    color: #111;
+    font-size: 13.5px;
+    font-family: 'Jose';
+    align-self: flex-start;
+}
+.form-firstlayer .company-lay{
+    display: flex;
+    align-items: center;
+    width: 94%;
+    flex-direction: column;
+}
+.company-lay input{
+    padding: 12px 10px;
+    border: 1px solid #eee;
+    background-color: #fff;
+}
+.form-firstlayer .company-lay h2{
+    color: #111;
+    font-size: 13.5px;
+    font-family: 'Jose';
+    align-self: flex-start;
+}
+.company-grid input[type="file"]{
+    font-family: 'Jose';
+    font-size: 12px;
+    padding-left: 15px;
+}

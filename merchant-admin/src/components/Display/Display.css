@@ -1,0 +1,11 @@
+.backdrop{
+    background-color: rgba(18, 17, 17, 0.6);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+}
+.backdrop .display-container .ds-cont{
+    margin: 30px 2px;
+}

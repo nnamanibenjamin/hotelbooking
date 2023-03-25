@@ -1,0 +1,63 @@
+.personal{
+    width: 100%;
+}
+.next-button{
+    width: 70%;
+    margin: auto;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #336699;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    animation: fadeIn 1.2s ease both;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Jose';
+    margin-top: 30px;
+}
+.form-firstlayer{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+}
+.form-firstlayer .personal-grid{
+    display: flex;
+    align-items: center;
+    width: 45%;
+    flex-direction: column;
+}
+.personal-grid input{
+    padding: 12px 10px;
+    border: 1px solid #eee;
+    background-color: #fff;
+}
+.form-firstlayer .personal-grid h2{
+    color: #111;
+    font-size: 13.5px;
+    font-family: 'Jose';
+    align-self: flex-start;
+}
+.form-firstlayer .personal-lay{
+    display: flex;
+    align-items: center;
+    width: 94%;
+    flex-direction: column;
+}
+.personal-lay input{
+    padding: 12px 10px;
+    border: 1px solid #eee;
+    background-color: #fff;
+}
+.form-firstlayer .personal-lay h2{
+    color: #111;
+    font-size: 13.5px;
+    font-family: 'Jose';
+    align-self: flex-start;
+}

@@ -1,0 +1,207 @@
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+.login-layer{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    background-image: url('../../assets/images/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: auto;
+}
+.login-layer .image-div h1{
+    font-family: 'Cross';
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #336699;
+    margin-left: 12px;
+}
+.login-layer .image-div img{
+    transform: scale(.85);
+}
+.company-id .icon{
+    color: #336699;
+    font-size: 3rem;
+    margin-left: 2rem;
+}
+.login-form{
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+}
+.login-layer .login-form-top h1{
+    font-family: 'Cross';
+    font-size: 1.4rem;
+    color: #336699;
+    font-weight: bold;
+}
+.login-layer .login-form-top h2{
+    font-family: 'Jose';
+    font-size: 1rem;
+    color: #444b56;
+}
+.form-main .key-layer{
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+    border: 1px solid #eee;
+    padding: 15px 15px;
+    border-radius: 10px;
+    animation: fadeIn 1.2s ease both;
+}
+.form-main .key-layer input{
+    outline: none;
+    border: none;
+    font-size: 14px;
+    font-family: 'Jose';
+    background: none;
+}
+
+.form-main .key-layer input:focus {
+    outline: none;
+  }
+.form-main .password-layer{
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+    border: 1px solid #eee;
+    padding: 12px 15px;
+    border-radius: 10px;
+    animation: fadeIn 1.2s ease both;
+}
+.form-main .password-layer input{
+    outline: none;
+    border: none;
+    font-size: 14px;
+    font-family: 'Jose';
+    background: none;
+}
+.form-main .login-btn{
+    width: 75%;
+    margin: auto;
+    border: none;
+    padding: 3.5px;
+    border-radius: 10px;
+    background-color: #336699;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    animation: fadeIn 1.2s ease both;
+    margin-bottom: 10px;
+}
+.form-main .login-btn:hover{
+    opacity: .7;
+}
+.password-eye{
+    margin-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.icon-left{
+    margin-right: 3px;
+    font-size: 20px;
+    color: #aab2be;
+}
+.icon-leftt{
+    margin-right: 3px;
+    font-size: 16px;
+}
+.form-main .login-btn .login-text{
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Jose';
+    margin-left: 10px;
+}
+.forgot-layer{
+    display: flex;
+    justify-content: flex-end;
+    margin: 1.2rem;
+}
+.forgot-layer h3{
+    font-family: 'Jose';
+    color: #363030;
+    font-size: 15px;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+.register-text{
+    font-family: 'Jose';
+    font-size: 1rem;
+    color: #336699;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.reg-icon{
+    font-size: 1.4rem;
+    color: #336699;
+    margin-right: 5px;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 700px) {
+    .login-layer{
+        height: 100%;
+        padding-bottom: 5rem;
+    }
+    .login-layer .image-div h1{
+        font-size: 1.1rem;
+    }
+    .company-id .icon{
+        font-size: 2.2rem;
+        margin-left: 2rem;
+    }
+    .login-layer .login-form-top h1{
+        font-size: 1.1rem;
+    }
+    .login-layer .login-form-top h2{
+        font-size: .8rem;
+    }
+    .login-main .login-form h1{
+        font-size: 18px;
+    }
+    
+    .login-main .login-form h2{
+        font-size: 10px;
+    }
+    .form-main .key-layer{
+        padding: 7px 10px;
+    }
+    .form-main .password-layer{
+        padding: 7px 10px;
+    }
+    .form-main .key-layer input{
+        font-size: 12px;
+    }
+    .form-main .password-layer input{
+        font-size: 12px;
+    }
+    .password-eye{
+        font-size: 15px;
+    }
+    .icon-left{
+        font-size: 15px;
+    }
+    .form-main .login-btn .login-text{
+        font-size: 12px;
+    }
+    .icon-leftt{
+        font-size: 14px;
+    }
+    .form-main .login-btn{
+        padding: 0px;
+    }
+    .forgot-layer h3{
+        font-size: 12px;
+    }
+    .register-text{
+        font-size: .7rem;
+    }
+}
